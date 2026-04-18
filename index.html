@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Bootstrap Starter</title>
+    <script>
+      (function () {
+        "use strict";
+        const storedTheme = localStorage.getItem("theme");
+        let theme = "light";
+
+        if (storedTheme === "light" || storedTheme === "dark") {
+          theme = storedTheme;
+        } else if (storedTheme === "auto" || !storedTheme) {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+
+        document.documentElement.setAttribute("data-bs-theme", theme);
+        // Optional: helps some browsers decide color-scheme early
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+
+    <!-- Tiny CSS to hide body until theme attribute exists -->
+    <style>
+      html:not([data-bs-theme]) body {
+        visibility: hidden;
+      }
+      html[data-bs-theme] body {
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
