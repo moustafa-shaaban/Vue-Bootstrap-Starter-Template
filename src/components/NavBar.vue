@@ -13,31 +13,39 @@ const themes = [
 
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Navbar">
-    <div class="container-fluid">
+    <div class="container">
+      <button class="btn btn-outline" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+        aria-controls="offcanvasExample">
+        <i class="bi bi-list"></i>
+      </button>
       <div class="navbar-brand">
         <RouterLink to="/" class="nav-link" active-class="active">
-          Home
+          <i class="bi bi-house-door me-1"></i> Home
         </RouterLink>
       </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
-        aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <i class="bi bi-three-dots"></i>
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <RouterLink to="/" class="nav-link" active-class="active">
+              <i class="bi bi-house-door me-1"></i> Home
+            </RouterLink>
+          </h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav flex-grow-1 pe-3">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <RouterLink to="/" class="nav-link py-2 px-0 px-lg-2 active" active-class="active">
                 Home
               </RouterLink>
-            </li>
+            </li> -->
             <li class="nav-item">
               <RouterLink to="/about" class="nav-link py-2 px-0 px-lg-2 active" active-class="active">
-                About
+                <i class="bi bi-info-circle me-1"></i> About
               </RouterLink>
             </li>
             <li class="nav-item dropdown">
